@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Lovely Sol Bomediano</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --barbie-hot-pink: #da1884;
+            --barbie-soft-pink: #f8c0d8;
+            --barbie-white: #ffffff;
+            --text-dark: #4a4a4a;
+        }
+
+        body {
+            background-color: var(--barbie-soft-pink);
+            background-image: radial-gradient(#ffffff 15%, transparent 16%), radial-gradient(#ffffff 15%, transparent 16%);
+            background-size: 60px 60px;
+            background-position: 0 0, 30px 30px;
+            font-family: 'Quicksand', sans-serif;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            background: var(--barbie-white);
+            margin: 0 auto;
+            border-radius: 30px;
+            box-shadow: 0 10px 25px rgba(218, 24, 132, 0.3);
+            border: 5px solid var(--barbie-white);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Decorative top border */
+        .container::before {
+            content: '';
+            display: block;
+            height: 20px;
+            background: repeating-linear-gradient(
+                45deg,
+                var(--barbie-hot-pink),
+                var(--barbie-hot-pink) 20px,
+                var(--barbie-soft-pink) 20px,
+                var(--barbie-soft-pink) 40px
+            );
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 40px 20px 40px;
+            background: linear-gradient(to bottom, #fff0f7, #fff);
+        }
+
+        /* Profile Image Placeholder Styling */
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 6px solid var(--barbie-hot-pink);
+            object-fit: cover;
+            margin-bottom: 15px;
+            background-color: #eee;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: var(--barbie-hot-pink);
+            font-size: 3.5rem;
+            margin: 10px 0;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-weight: 600;
+            color: #d63384;
+            font-size: 0.95rem;
+        }
+
+        .contact-info span {
+            background: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            border: 2px solid var(--barbie-soft-pink);
+        }
+
+        .main-content {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .main-content {
+                grid-template-columns: 2fr 1fr; /* Main column and side column */
+            }
+        }
+
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            color: var(--barbie-white);
+            background-color: var(--barbie-hot-pink);
+            font-size: 1.8rem;
+            padding: 5px 20px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 20px;
+            box-shadow: 3px 3px 0px var(--barbie-soft-pink);
+        }
+
+        .card {
+            background: #fff0f6;
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            border: 2px dashed var(--barbie-soft-pink);
+        }
+
+        h3 {
+            color: var(--barbie-hot-pink);
+            margin-top: 0;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .date, .institution {
+            font-weight: 600;
+            color: #888;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            padding-left: 20px;
+            list-style-type: none;
+        }
+
+        ul li {
+            position: relative;
+            margin-bottom: 8px;
+        }
+
+        ul li::before {
+            content: '♥';
+            color: var(--barbie-hot-pink);
+            position: absolute;
+            left: -20px;
+            font-size: 1rem;
+        }
+
+        .gpa-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .gpa-table th {
+            background-color: var(--barbie-soft-pink);
+            color: var(--barbie-hot-pink);
+            padding: 8px;
+            text-align: left;
+        }
+
+        .gpa-table td {
+            padding: 8px;
+            border-bottom: 1px solid #fceef5;
+        }
+
+        .cert-text {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #999;
+            margin-top: 40px;
+            font-style: italic;
+        }
+
+        /* Right column specific styles */
+        .skills-list span {
+            display: inline-block;
+            background: white;
+            color: var(--barbie-hot-pink);
+            padding: 8px 12px;
+            margin: 5px 0;
+            border-radius: 15px;
+            border: 1px solid var(--barbie-soft-pink);
+            font-weight: 600;
+            font-size: 0.9rem;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <img src="https://via.placeholder.com/180x180/da1884/ffffff?text=Lovely+Sol" alt="Lovely Sol Bomediano" class="profile-img">
+            
+            [cite_start]<h1>Lovely Sol Bomediano [cite: 1]</h1>
+            
+            <div class="contact-info">
+                [cite_start]<span>📍 Garden Village Daisy St., House 107, Pulong Buhangin, Santa Maria, Bulacan [cite: 2]</span>
+                [cite_start]<span>📞 0949 829 3123 [cite: 3]</span>
+                [cite_start]<span>📧 lovelysolvbomediano@gmail.com [cite: 4]</span>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="left-col">
+                
+                <div class="section">
+                    <h2 class="section-title">About Me</h2>
+                    <p>
+                        [cite_start]Graduating BS Entrepreneurship student (consistent President Lister) of the Polytechnic University of the Philippines - Santa Maria (Class of Oct 2026). [cite: 6]
+                        [cite_start]I have a good academic background in business management and basic auditing, and my background of excellence dates back to high school. [cite: 7]
+                        [cite_start]I am a very versatile and disciplined person who works best under pressure, and I am looking to get an OJT opportunity in order to add good work ethics and new outlook to the organizational objectives. [cite: 8]
+                    </p>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">Education</h2>
+                    
+                    <div class="card">
+                        <h3>Polytechnic University of the Philippines</h3>
+                        <span class="institution">Santa Maria, Bulacan</span>
+                        [cite_start]<span class="date">2022 - Present [cite: 10]</span>
+                        <ul>
+                            [cite_start]<li><strong>Bachelor of Science in Entrepreneurship</strong> [cite: 16]</li>
+                            [cite_start]<li>Expected Graduation: October 2026 [cite: 18]</li>
+                            [cite_start]<li>Consistent President's Lister (5 Years/Throughout Academic Tenure) [cite: 18]</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>Mater Dei Academy</h3>
+                        [cite_start]<span class="date">2016 - 2022 [cite: 13]</span>
+                        <ul>
+                            [cite_start]<li><strong>Senior High School:</strong> Accountancy, Business, and Management (ABM) [cite: 20, 21]</li>
+                            [cite_start]<li><strong>Junior High School:</strong> Completed under the Special Science Class (SSC) Curriculum [cite: 22, 23]</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">Academic Achievements</h2>
+                    <div class="card">
+                        <table class="gpa-table">
+                            <tr>
+                                <th>Year Level</th>
+                                <th>Semester</th>
+                                <th>Award/GPA</th>
+                            </tr>
+                            <tr>
+                                <td>3rd Year</td>
+                                <td>1st Sem</td>
+                                [cite_start]<td>President's Lister (1.43) [cite: 29]</td>
+                            </tr>
+                            <tr>
+                                <td>3rd Year</td>
+                                <td>2nd Sem</td>
+                                [cite_start]<td>President's Lister (1.11) [cite: 29]</td>
+                            </tr>
+                            <tr>
+                                <td>2nd Year</td>
+                                <td>1st Sem</td>
+                                [cite_start]<td>President's Lister (1.38) [cite: 34]</td>
+                            </tr>
+                            <tr>
+                                <td>2nd Year</td>
+                                <td>2nd Sem</td>
+                                [cite_start]<td>Director's Lister (1.68) [cite: 34]</td>
+                            </tr>
+                            <tr>
+                                <td>1st Year</td>
+                                <td>1st Sem</td>
+                                [cite_start]<td>President's Lister (1.15) [cite: 30]</td>
+                            </tr>
+                            <tr>
+                                <td>1st Year</td>
+                                <td>2nd Sem</td>
+                                [cite_start]<td>President's Lister (1.30) [cite: 30]</td>
+                            </tr>
+                            <tr>
+                                <td>Grade 12</td>
+                                <td>Year End</td>
+                                [cite_start]<td>With High Honors [cite: 36]</td>
+                            </tr>
+                            <tr>
+                                <td>Grade 11</td>
+                                <td>Year End</td>
+                                [cite_start]<td>With Honors [cite: 36]</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="right-col">
+                
+                <div class="section">
+                    <h2 class="section-title">Skills</h2>
+                    
+                    <div class="card">
+                        <h3>Technical & Office</h3>
+                        <div class="skills-list">
+                            [cite_start]<span>Basic Bookkeeping [cite: 39]</span>
+                            [cite_start]<span>Record Keeping [cite: 39]</span>
+                            [cite_start]<span>Documentation [cite: 41]</span>
+                            [cite_start]<span>Report Writing [cite: 41]</span>
+                            [cite_start]<span>Business Operations [cite: 41]</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Work Ethics</h3>
+                        <div class="skills-list">
+                            [cite_start]<span>Time Management [cite: 43]</span>
+                            [cite_start]<span>Punctuality [cite: 43]</span>
+                            [cite_start]<span>Integrity [cite: 44]</span>
+                            [cite_start]<span>Confidentiality [cite: 44]</span>
+                            [cite_start]<span>Communication Skills [cite: 44]</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">References</h2>
+                    <div class="card" style="text-align: center;">
+                        [cite_start]<h3>Eduardo Francisco [cite: 45]</h3>
+                        <span class="institution">Instructor, BS Entrepreneurship</span>
+                        <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">
+                            [cite_start]Phone and Social available upon request [cite: 46]
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="cert-text">
+            [cite_start]"I hereby certify the above information is true and correct to the best of my knowledge and belief." [cite: 47]
+        </div>
+    </div>
+
+</body>
+</html>
